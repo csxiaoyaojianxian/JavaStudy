@@ -1,7 +1,6 @@
 package RedBlackTree;
 
 public class Test {
-
 	public static void main(String[] args) {
 		RedBlackTree T = new RedBlackTree();
 		RedBlackTreeNode node1 = T.RB_NODE(10);
@@ -12,5 +11,4 @@ public class Test {
 		T.RB_INSERT(T, node3);
 		T.preorder(T.getRoot());
 	}
-
 }

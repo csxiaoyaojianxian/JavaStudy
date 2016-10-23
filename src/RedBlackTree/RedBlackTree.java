@@ -1,7 +1,5 @@
 package RedBlackTree;
 
-import java.util.zip.ZipEntry;
-
 public class RedBlackTree {
 	private static RedBlackTreeNode nil = new RedBlackTreeNode();
 	private RedBlackTreeNode root = new RedBlackTreeNode();
