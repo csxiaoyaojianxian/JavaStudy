@@ -12,6 +12,17 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 
+ * @ClassName: c1二叉树打印
+ * @Description: 涉及知识点：
+ * bufferedOutputStream、stringBuilder
+ * 
+ * @author C逍遥剑仙-SUNSHINE
+ * @date 2017年2月20日 下午7:05:39
+ *
+ */
+		
 public class c1二叉树打印 {
 	
 	/**
@@ -51,9 +62,6 @@ public class c1二叉树打印 {
 	/**
 	 * @Title: serialize
 	 * @Description: 二叉树序列化，每个结点结束用 ! 标记，null用 #! 标记
-	 * @param @param t
-	 * @return void
-	 * @throws
 	 */
 	public static String serialize(TNode t){
 		if(t == null){
@@ -61,7 +69,10 @@ public class c1二叉树打印 {
 		}
 		return t.val+"!" +serialize(t.left) + serialize(t.right);
 	}
-	
+	/**
+	 * @Title: deserialize
+	 * @Description: 二叉树反序列化
+	 */
 	public static TNode deserialize(String seri){
 		String[] input= seri.split("!");
 		Queue<String> queue = new LinkedList<String>();
@@ -70,7 +81,6 @@ public class c1二叉树打印 {
 		}
 		return construct(queue);
 	}
-	
 	public static TNode construct(Queue q){
 		String val = (String) q.poll();
 		if(val.equals("#")){
