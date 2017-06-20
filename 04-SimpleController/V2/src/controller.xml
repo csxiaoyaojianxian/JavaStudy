@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-controller>
+
+	<interceptor>
+	    <name>logWriter</name>
+	    <class>
+	        <name>com.csxiaoyao.interceptor.LogWriter</name>
+	        <method>log</method>
+	    </class>
+	 </interceptor>
+	 
+	<action>
+		<name>login</name>
+		<class>
+			<name>com.csxiaoyao.action.LoginActionImpl</name>
+			<method>login</method>
+		</class>
+		<interceptor-ref>
+            <name>logWriter</name>
+        </interceptor-ref>
+		<result>
+			<name>success</name>
+			<type>forward</type>
+			<value>pages/success_view.xml</value>
+		</result>
+		<result>
+			<name>fail</name>
+			<type>redirect</type>
+			<value>pages/fail.jsp</value>
+		</result>
+	</action>
+	<action>
+	   <name>logout</name>
+	   <class>
+	       <name>com.csxiaoyao.action.LogoutActionImpl</name>
+	       <method>logout</method>
+	   </class>
+	   <result>
+	       <name>success</name>
+	       <type>forward</type>
+	       <value>login.jsp</value>
+	   </result>
+	   <result>
+	       <name>fail</name>
+	       <type>forward</type>
+	       <value>pages/success_view.xml</value>
+	   </result>
+	</action>
+	<action>
+       <name>register</name>
+       <class>
+           <name>com.csxiaoyao.action.RegisterActionImp</name>
+           <method>register</method>
+       </class>
+       <interceptor-ref>
+           <name>logWriter</name>
+       </interceptor-ref>
+       <result>
+           <name>success</name>
+           <type>forward</type>
+           <value>login.jsp</value>
+       </result>
+       <result>
+           <name>fail</name>
+           <type>redirect</type>
+           <value>pages/register.jsp</value>
+       </result>
+    </action>
+
+</action-controller>

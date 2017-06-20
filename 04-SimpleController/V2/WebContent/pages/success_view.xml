@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<?xml-stylesheet type="text/xsl" href="pages/success_view.xsl"?>  
+<view>
+	<header>a view in MVC</header>
+	<body>
+		<form>
+			<name>logoutForm</name>
+			<action>logout.action</action>
+			<method>post</method>
+			<textView>
+			   <type>password</type>
+				<name>password</name>
+				<label>password</label>
+			</textView>
+			<buttonView>
+				<name>logoutButton</name>
+				<type>submit</type>
+				<value>Logout</value>
+				<label>Logout</label>
+			</buttonView>
+		</form>
+	</body>
+</view>

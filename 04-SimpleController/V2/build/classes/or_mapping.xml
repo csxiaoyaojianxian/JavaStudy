@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OR-Mappings>
+	<jdbc>
+	 	<propery>
+	 		<name>driver_class</name>
+	 		<value>com.mysql.jdbc.Driver</value>
+	 	</propery>
+	 	<propery>
+	 	    <name>url_path</name>
+	        <value>jdbc:mysql://localhost:3306/SimpleController</value>
+	 	</propery>
+	 	<propery>
+	 		<name>db_username</name>
+	 		<value>root</value>
+	 	</propery>
+	 	<propery>
+	 	    <name>db_userpassword</name>
+	 	    <value>19931128</value>
+	 	</propery>
+	</jdbc>
+	<class>
+		<name>UserBean</name>
+		<table>user</table>
+		<id>
+			<name>id</name>
+		</id>
+		<property>
+		    <name>username</name>
+		    <column>username</column>
+		    <type>String</type>
+		    <lazy>false</lazy>
+		</property>
+		<property>
+			 <name>password</name>
+		    <column>password</column>
+		    <type>String</type>
+		    <lazy>true</lazy>
+		</property>
+	</class>
+</OR-Mappings>

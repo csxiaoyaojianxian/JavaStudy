@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-controller>
+	<action>
+		<name>login</name>
+		<class>
+			<name>com.csxiaoyao.action.LoginAction</name>
+			<method>login</method>
+		</class>
+		<result>
+			<name>success</name>
+			<type>forward</type>
+			<value>pages/success.jsp</value>
+		</result>
+		<result>
+			<name>fail</name>
+			<type>redirect</type>
+			<value>pages/fail.jsp</value>
+		</result>
+	</action>
+	<action>
+		<name>register</name>
+		<class>
+			<name>com.csxiaoyao.action.RegisterAction</name>
+			<method>register</method>
+		</class>
+	</action>
+
+</action-controller>

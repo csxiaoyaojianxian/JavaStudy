@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependency-mappings>
+	<bean>
+		<name>user</name>
+		<class>com.csxiaoyao.bean.UserBean</class>
+		<property>
+			<name>username</name>
+		</property>
+		<property>
+			<name>password</name>
+		</property>
+	</bean>
+	<bean>
+		<name>login</name>
+		<class>com.csxiaoyao.action.LoginAction</class>
+		<property>
+			<name>userBean</name>
+			<ref-class>user</ref-class>
+		</property>
+	</bean>
+	<bean>
+		<name>register</name>
+		<class>com.csxiaoyao.action.RegisterAction</class>
+		<property>
+			<name>info</name>
+		</property>
+	</bean>
+
+</dependency-mappings>
