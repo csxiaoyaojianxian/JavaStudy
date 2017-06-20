@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 
+	简单继承
+ -->
+<hibernate-mapping package="com.csxiaoyao.mapping.extends1">
+	<class name="Cat" table="t_Cat">
+		<!-- 简单继承映射： 父类属性直接写 -->
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		
+		<property name="catchMouse"></property>					 
+	</class>
+</hibernate-mapping>

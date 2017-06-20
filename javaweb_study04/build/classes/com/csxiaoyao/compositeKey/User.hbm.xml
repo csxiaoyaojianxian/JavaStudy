@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.csxiaoyao.compositeKey" auto-import="true">
+	<!-- 没有指定表名，默认与对象名称一样 -->
+	<class name="User">
+		<!-- 复合主键映射 -->
+		<composite-id name="keys">
+			<key-property name="userName" type="string"></key-property>
+			<key-property name="address" type="string"></key-property>
+		</composite-id>
+		
+		<property name="age" type="int"></property>		
+		
+	</class>
+</hibernate-mapping>

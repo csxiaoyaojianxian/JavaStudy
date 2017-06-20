@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 映射文件: 映射一个实体类对象；  描述一个对象最终实现可以直接保存对象数据到数据库中。  -->
+<!-- 
+	package: 要映射的对象所在的包(可选,如果不指定,此文件所有的类都要指定全路径)
+	auto-import 默认为true， 在写hql的时候自动导入包名
+				如果指定为false, 再写hql的时候必须要写上类的全名；
+				  如：session.createQuery("from com.csxiaoyao.c_hbm_config.Employee").list();
+ -->
+<hibernate-mapping package="com.csxiaoyao.crud" auto-import="true">
+	
+	<!-- 
+		class 映射某一个对象的(一般情况，一个对象写一个映射文件，即一个class节点)
+			name 指定要映射的对象的类型
+			table 指定对象对应的表；
+				  如果没有指定表名，默认与对象名称一样 
+	 -->
+	<class name="Employee" table="employee">
+		
+		<!-- 主键 ，映射-->
+		<id name="empId" column="id" type="java.lang.Integer">
+			<!-- 
+				主键的生成策略
+					identity  自增长(mysql,db2)
+					sequence  自增长(序列)， oracle中自增长是以序列方法实现
+					native  自增长【会根据底层数据库自增长的方式选择identity或sequence】
+							如果是mysql数据库, 采用的自增长方式是identity
+							如果是oracle数据库， 使用sequence序列的方式实现自增长
+					
+					increment  自增长(会有并发访问的问题，一般在服务器集群环境使用会存在问题。)
+					
+					assigned  指定主键生成策略为手动指定主键的值
+					uuid      指定uuid随机生成的唯一的值
+					foreign   (外键的方式， one-to-one讲)
+			 -->
+			<generator class="native"/>
+		</id>
+		
+		<!-- 
+			普通字段映射
+			property
+				name  指定对象的属性名称
+				column 指定对象属性对应的表的字段名称，如果不写默认与对象属性一致。
+				length 指定字符的长度, 默认为255
+				type   指定映射表的字段的类型，如果不指定会匹配属性的类型
+					java类型：     必须写全名
+					hibernate类型：  直接写类型，都是小写
+		-->
+		<!-- <property name="empName" column="empName"  type="string" length="20"></property> -->
+		<property name="empName" column="empName"  type="java.lang.String" length="20"></property>
+		<property name="workDate" type="java.util.Date"></property>
+		<!-- 如果列名称为数据库关键字，需要用反引号或改列名。 -->
+		<property name="desc" column="`desc`" type="java.lang.String"></property>
+		
+	</class>
+</hibernate-mapping>

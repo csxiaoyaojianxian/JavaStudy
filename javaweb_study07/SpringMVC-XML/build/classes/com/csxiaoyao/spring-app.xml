@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+	  http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	  http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	  http://www.springframework.org/schema/aop 
+	  http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	  http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+      ">
+
+	<!-- 注册控制器(程序员) -->
+	<!-- 一对一 -->
+	<bean name="/add.action" class="com.csxiaoyao.action.EmpAction"></bean>
+	<!-- 多对一 -->
+	<bean id="userActionID" class="com.csxiaoyao.action.TestAction"></bean>	
+	
+	<!-- 注册映射器(handler包)(框架) -->
+	<!-- 一对一 -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+	<!-- 多对一 -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/fun1.action">userActionID</prop>
+				<prop key="/fun2.action">userActionID</prop>
+				<prop key="/fun3.action">userActionID</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 专用于jsp到jsp/html的转发控制器，由系统自带的控制器直接转发 -->
+    <bean name="/test.action" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<!-- 转发到真实视图名 -->
+    	<property name="viewName" value="test"/>
+    </bean>
+    
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+  <!-- 标签库的版本 -->
+  <tlib-version>1.1</tlib-version>
+  <!-- 标签库前缀 -->
+  <short-name>csxiaoyao</short-name>
+  <!-- tld文件的唯一标记 -->
+  <uri>http://www.csxiaoyao.com</uri>
+  
+  <!-- 一个标签的声明 -->
+  <tag>
+    <!-- 标签名称 -->
+    <name>showIp</name>
+    <!-- 标签处理器类的全名 -->
+    <tag-class>com.csxiaoyao.contactSys_web.util.tag.ShowIpTag</tag-class>
+    <!-- 输出标签体内容格式 -->
+    <body-content>scriptless</body-content>
+  </tag>
+
+</taglib>

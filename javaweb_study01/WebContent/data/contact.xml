@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<contactList> 
+  <contact id="5c107441894242c8a3375d4ad90df59d"> 
+    <name>孙剑峰</name>  
+    <gender>男</gender>  
+    <age>25</age>  
+    <phone>17186391724</phone>  
+    <email>1724338257@qq.com</email>  
+    <qq>1724338257</qq> 
+  </contact> 
+</contactList>

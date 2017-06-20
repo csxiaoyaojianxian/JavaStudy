@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>javaweb_study01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+<!-- 错误页，还需要配置页面isErrorPage -->
+<error-page>  
+    <error-code>404</error-code>  
+    <location>/error.jsp</location>  
+</error-page>  
+<error-page>  
+    <error-code>500</error-code>  
+    <location>/error.jsp</location>  
+</error-page> 
+
+  <servlet>
+    <servlet-name>ListContactServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.ListContactServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddContactServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.AddContactServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QueryContactServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.QueryContactServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateContactServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.UpdateContactServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteContactServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.DeleteContactServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.csxiaoyao.contactSys_web.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListContactServlet</servlet-name>
+    <url-pattern>/ListContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddContactServlet</servlet-name>
+    <url-pattern>/AddContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryContactServlet</servlet-name>
+    <url-pattern>/QueryContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateContactServlet</servlet-name>
+    <url-pattern>/UpdateContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteContactServlet</servlet-name>
+    <url-pattern>/DeleteContactServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- JSTL -->
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+      <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/fmt-rt</taglib-uri>
+      <taglib-location>/WEB-INF/fmt-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+      <taglib-location>/WEB-INF/c.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/core-rt</taglib-uri>
+      <taglib-location>/WEB-INF/c-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+      <taglib-location>/WEB-INF/sql.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/sql-rt</taglib-uri>
+      <taglib-location>/WEB-INF/sql-rt.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+      <taglib-location>/WEB-INF/x.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>http://java.sun.com/jstl/x-rt</taglib-uri>
+      <taglib-location>/WEB-INF/x-rt.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>
